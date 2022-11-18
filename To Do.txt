@@ -1,0 +1,5 @@
+[X] 1. Simulation of Pure Pursuit problem`	
+[ ] 2. Simulation of Critical Path method
+[X] 3. Simulation of LCM random number generator method.
+[x] 4. Simulation of Chemical Reactor
+[ ] 5. Drawing of a Bezier Curve
