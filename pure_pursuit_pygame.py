@@ -43,8 +43,6 @@ fighter_screen_y = [center_coords[1]+y for y in yf]
 bomber_screen_x = [center_coords[0]+x for x in xb]
 bomber_screen_y = [center_coords[1]+y for y in yb]
 
-print(fighter_screen_x, fighter_screen_y)
-
 pygame.init()
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Pure Pursuit')
