@@ -35,13 +35,13 @@ for i in range(len(xb)):
     xf.append(xf[i] + vf * cosx)
     yf.append(yf[i] + vf * sinx)
 
-size = width, height = (400, 400)
+size = width, height = (1500, 800)
 center_coords = (width/2, height/2)
 
-fighter_screen_x = [center_coords[0]+x for x in xf]
-fighter_screen_y = [center_coords[1]+y for y in yf]
-bomber_screen_x = [center_coords[0]+x for x in xb]
-bomber_screen_y = [center_coords[1]+y for y in yb]
+fighter_screen_x = [(center_coords[0]+x*4) for x in xf]
+fighter_screen_y = [(center_coords[1]+y*4) for y in yf]
+bomber_screen_x = [(center_coords[0]+x*4) for x in xb]
+bomber_screen_y = [(center_coords[1]+y*4) for y in yb]
 
 print('Red line = Bomber, Blue line = Fighter')
 
@@ -58,10 +58,10 @@ while running:
         if event.type == QUIT:
             running = False
     
-    pygame.draw.line(screen, (0, 0, 0), (center_coords[0]-200,center_coords[1]), (center_coords[0]+200,center_coords[1]))
-    pygame.draw.line(screen, (0, 0, 0), (center_coords[0],center_coords[1]-200), (center_coords[0],center_coords[1]+200))
-    pygame.draw.aalines(screen, (0, 0, 255), False, tuple(zip(fighter_screen_x, fighter_screen_y)))
-    pygame.draw.aalines(screen, (255, 0, 0), False, tuple(zip(bomber_screen_x, bomber_screen_y)))
+    pygame.draw.line(screen, (0, 0, 0), (center_coords[0]-2000,center_coords[1]), (center_coords[0]+2000,center_coords[1]))
+    pygame.draw.line(screen, (0, 0, 0), (center_coords[0],center_coords[1]-2000), (center_coords[0],center_coords[1]+2000))
+    pygame.draw.lines(screen, (0, 0, 255), False, tuple(zip(fighter_screen_x, fighter_screen_y)), 4)
+    pygame.draw.lines(screen, (255, 0, 0), False, tuple(zip(bomber_screen_x, bomber_screen_y)), 4)
 
     pygame.display.flip()
 pygame.quit()
